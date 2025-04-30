@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="clickButton" class="button">Clique aqui</button>
+        <button id="resetButton" class="button reset">Resetar</button>
+
+        <div class="counter" id="clickCounter">Total de cliques: 0</div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        const clickButton = document.getElementById('clickButton');
+        const resetButton = document.getElementById('resetButton');
+        const clickCounter = document.getElementById('clickCounter');
+
+        function atualizarContador() {
+            clickCounter.textContent = `Total de cliques: ${clickCount}`;
+        }
+
+        clickButton.addEventListener('click', () => {
+            clickCount++;
+            atualizarContador();
+        });
+
+        resetButton.addEventListener('click', () => {
+            clickCount = 0;
+            atualizarContador();
+        });
+    </script>
+
+</body>
+
+</html>
+<!-- precisei de uma ajude do chatgpt para adicionar o (atualizarContador() ) -->

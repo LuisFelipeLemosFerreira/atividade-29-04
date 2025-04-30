@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Usuário" />
+    <input type="password" id="password" placeholder="Senha" />
+    <button onclick="fazerLogin()">Login</button>
+    <!-- mesagem de erro -->
+    <div id="resultado" style="color: red;"></div>
+
+    <script>
+        function fazerLogin() {
+            // usuario e senha para logar no site 
+            const usuarioFixo = "admin";
+            const senhaFixa = "1234";
+
+            const usuario = document.getElementById("username").value;
+            const senha = document.getElementById("password").value;
+            const resultado = document.getElementById("resultado");
+
+            if (usuario === usuarioFixo && senha === senhaFixa) {
+                resultado.textContent = "Login realizado com sucesso!";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "Usuário ou senha incorretos.";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+<!-- precisei pedir para o chat meu auxiliar para eu criar um usuario e uma senha fixa para logar no meu site -->

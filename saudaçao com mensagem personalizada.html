@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação Personalizada</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="nameInput" placeholder="Digite seu nome">
+        </div>
+        <button id="greetButton" class="button">Exibir Saudação</button>
+        <div class="greeting" id="greetingMessage"></div>
+    </div>
+
+    <script>
+        // hora e dia função
+        function saudacaoPorHorario() {
+            const agora = new Date();
+            const hora = agora.getHours();
+
+            if (hora >= 6 && hora < 12) {
+                return 'Bom dia';
+            } else if (hora >= 12 && hora < 18) {
+                return 'Boa tarde';
+            } else {
+                return 'Boa noite';
+            }
+        }
+
+
+        const nameInput = document.getElementById('nameInput');
+        const greetButton = document.getElementById('greetButton');
+        const greetingMessage = document.getElementById('greetingMessage');
+
+        // saudação personalizada
+        greetButton.addEventListener('click', () => {
+            const nome = nameInput.value.trim();
+            if (nome) {
+                const saudacao = saudacaoPorHorario();
+                greetingMessage.textContent = `${saudacao}, ${nome}!`;
+            } else {
+                greetingMessage.textContent = 'Por favor, insira seu nome!';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+<!-- precisei de um auxilio do chatgpt pedindo como adicionar a saudacão ao meu codigo -->
